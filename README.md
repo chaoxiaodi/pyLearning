@@ -6,8 +6,8 @@
 zbxDingPy.py 是告警具体实现逻辑<br />
 zbxActionConf.py 是zabbix页面的动作设置<br />
 <br />
-zabbix故障告警结果
-![zbxgzpng](https://github.com/chaoxiaodi/pyLearning/blob/master/zabbixDingPY/zbxalertgz.png)
-zabbix恢复告警结果
-![zbxhfpng](https://github.com/chaoxiaodi/pyLearning/blob/master/zabbixDingPY/zbxalerthf.png)
-
+zabbix故障告警结果<br />
+![zbxgzpng](https://github.com/chaoxiaodi/pyLearning/blob/master/zabbixDingPY/zbxalertgz.png) <br />
+zabbix恢复告警结果<br />
+![zbxhfpng](https://github.com/chaoxiaodi/pyLearning/blob/master/zabbixDingPY/zbxalerthf.png) <br />
+<br />
