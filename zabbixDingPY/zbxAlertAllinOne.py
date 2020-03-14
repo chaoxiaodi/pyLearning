@@ -29,11 +29,11 @@ class ZbxHanding:
 
     def __init__(self):
         # zabbix 服务器url
-        self.zserver_url = 'http://zabbix.zhyd.com'
+        self.zserver_url = 'http://zabbix.abc.com'
         # zabbix 图形页面url
-        self.zchart_url = "http://zabbix.zhyd.com/chart.php"
+        self.zchart_url = "http://zabbix.abc.com/chart.php"
         # 全局变量host
-        self.host = 'zabbix.zhyd.com'
+        self.host = 'zabbix.abc.com'
         # zabbix获取图片保存的名称
         self.pic_name = 'zbxalert.png'
         # zabbix itemid 用来获取图片
@@ -55,7 +55,7 @@ class ZbxHanding:
             # 构建登录所需的信息
             playLoad = {
                 "name": "Admin",
-                "password": 'bjzhyd2019',
+                "password": 'zabbix',
                 "autologin": "1",
                 "enter": "Sign in",
             }
@@ -99,15 +99,15 @@ class DingDing:
     '''
 
     def __init__(self):
-        self.dappkey = 'dingxpjvps5mjt2gfads'
-        self.dappsecret = 'Vn2W04NuK9XBUVCCMiQ4_Rwq7kxJJQIb_SLs_OCro7OySNN4oatN4DZ8RB_FwGmk'
+        self.dappkey = '你的钉钉appkey'
+        self.dappsecret = '你的钉钉app密钥'
         # 钉钉获取token url
         self.dgturls = 'https://oapi.dingtalk.com/gettoken'
         # 钉钉上传图片url
         self.dupurls = 'https://oapi.dingtalk.com/media/upload'
         # 钉钉群机器人webhook url
         self.dwebhook_url = 'https://oapi.dingtalk.com/robot/send?access_token=' \
-                            '2cbac4308bfda275533a81875c5571f8212135aa9e96641cf6cb4efb38836b32'
+                            '你的webhook'
         # 钉钉获取的token
         self.dtoken = ''
         self.mediaid = ''
@@ -116,7 +116,7 @@ class DingDing:
     def get_dingtoken(self):
         heads = {
             'Content-Type': 'application/json',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:6.0) Gecko/20100101 Firefox/6.0'
         }
         data = {
             'appkey': self.dappkey,
@@ -129,7 +129,7 @@ class DingDing:
     def upload_pic_dingding(self, file_name):
         heads = {
             'Content-Type': 'application/json',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:6.0) Gecko/20100101 Firefox/6.0'
         }
         files = {'media': open(file_name, 'rb')}
         data = {
@@ -160,8 +160,8 @@ class Wechat:
     发送消息
     '''
     def __init__(self):
-        self.wcorpid = 'ww3c325563c33c1990'
-        self.wcorpsecret = '84mZmAQK7RHCjzmpeJukMJ7mBBQ8HOyP8NvDg0rxHo8'
+        self.wcorpid = '你的企业微信id'
+        self.wcorpsecret = '你的企业安全字段'
         # 钉钉获取token url
         self.wgturls = 'https://qyapi.weixin.qq.com/cgi-bin/gettoken'
         # 钉钉上传图片url
@@ -175,7 +175,7 @@ class Wechat:
     def get_wechattoken(self):
         heads = {
             'Content-Type': 'application/json',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:6.0) Gecko/20100101 Firefox/6.0'
         }
         data = {
             'corpid': self.wcorpid,
@@ -187,7 +187,7 @@ class Wechat:
     def upload_pic_wechat(self, file_name):
         heads = {
             'Content-Type': 'application/json',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:6.0) Gecko/20100101 Firefox/6.0'
         }
         self.wupurls += "?access_token=%s&type=image" % self.wtoken
         files = {'media': open(file_name, 'rb')}
@@ -230,11 +230,11 @@ class Email:
     发送消息
     '''
     def __init__(self):
-        self.user = 'liuguangcai@agri-garden.com'
-        self.passwd = 'LIUchao1314'
+        self.user = '你的邮箱账号'
+        self.passwd = '你的邮箱密码'
         self.serverurl = 'smtp.qiye.163.com'
         self.serverport = 465
-        self.to_list = ["admin@agri-garden.com"]
+        self.to_list = ["接收邮件的地址1", "接收邮件的地址2"]
 
     def msg_to_email(self, zhuti, info):
         # 构建html消息体，把接收的消息转换为html格式
@@ -276,8 +276,8 @@ class FeiShu:
     发送消息
     '''
     def __init__(self):
-        self.fsappid = 'cli_9ee6211662ed500e'
-        self.fsappsecret = 'IW1lVeSds7kvyd83NFDTfb0rghfP1kqW'
+        self.fsappid = '你的飞书appid'
+        self.fsappsecret = '你的飞书app安全字段'
         # 飞书获取token url
         self.fsgturls = 'https://open.feishu.cn/open-apis/auth/v3/app_access_token/internal/'
         # 飞书上传图片urlf
@@ -294,7 +294,7 @@ class FeiShu:
     def get_feishutoken(self):
         heads = {
             'Content-Type': 'application/json',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:6.0) Gecko/20100101 Firefox/6.0'
         }
         data = {
             'app_id': self.fsappid,
